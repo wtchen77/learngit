@@ -14,13 +14,13 @@
 注意：这里有个坑需要注意一下，就是在上面创建远程仓库的时候，如果你勾选了Initialize this repository with a README（创建仓库的时候自动创建一个README文件），那么你将本地仓库内容推送到远程仓库的时候就会报错，failed to push some refs to 'https://github.com/wtchen77/learngit.git' ，这是由于新创建的那个仓库里面的README文件不在本地仓库目录中，这时我们可以通过以下命令先将内容合并一下：$ git pull --rebase origin master  
 
 ## github上的版本和本地版本冲突的解决方法
-1. 使用强制push的方法：
+1. 使用强制push的方法：  
 $ git push -u origin master -f
-这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。
-2. push前先将远程repository修改pull下来
-$ git pull origin master
-$ git push -u origin master
-3. 若不想merge远程和本地修改，可以先创建新的分支：
-$ git branch [name]
-然后push
+这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。  
+2. push前先将远程repository修改pull下来  
+$ git pull origin master  
+$ git push -u origin master  
+3. 若不想merge远程和本地修改，可以先创建新的分支：  
+$ git branch [name]  
+然后push  
 $ git push -u origin [name]
